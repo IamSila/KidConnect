@@ -79,7 +79,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="index.html#about">Get Started</a>
+      <a class="btn-getstarted" href="index.html#about">Report a Missing child</a>
 
     </div>
   </header>
@@ -514,12 +514,12 @@
         <div class="row gy-4 align-items-center justify-content-between">
 
           <div class="col-lg-5">
-            <img src="{% static '/img/stats-img.jpg' %}" alt="" class="img-fluid">
+            <img src="{{ analytic.customisableImage }}" alt="" class="img-fluid">
           </div>
           
           <div class="col-lg-6">
 
-            <h3 class="fw-bold fs-2 mb-3">Voluptatem dignissimos provident quasi</h3>
+            <h3 class="fw-bold fs-2 mb-3">Uniting families, Restoring the bright parent smile</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
             </p>
@@ -531,7 +531,7 @@
                   <i class="bi bi-emoji-smile flex-shrink-0"></i>
                   <div>
                     <span data-purecounter-start="0" data-purecounter-end="{{ analytic.reportedChildren }}" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Reported Children</strong> <span>consequuntur quae</span></p>
+                    <p><strong>Reported Children</strong> <span>in the year {{ analytic.year }}</span></p>
                   </div>
                 </div>
               </div><!-- End Stats Item -->
@@ -541,7 +541,7 @@
                   <i class="bi bi-journal-richtext flex-shrink-0"></i>
                   <div>
                     <span data-purecounter-start="0" data-purecounter-end="{{ analytic.foundChildren }}" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Found Children</strong> <span>adipisci atque cum quia aut</span></p>
+                    <p><strong>Found Children</strong> <span>in the year {{analytic.year}}</span></p>
                   </div>
                 </div>
               </div><!-- End Stats Item -->
@@ -551,7 +551,7 @@
                   <i class="bi bi-headset flex-shrink-0"></i>
                   <div>
                     <span data-purecounter-start="0" data-purecounter-end="{{ analytic.missingChildren }}" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Missing Children</strong> <span>aut commodi quaerat</span></p>
+                    <p><strong>Missing Children</strong> <span>in the year {{ analytic.year }}</span></p>
                   </div>
                 </div>
               </div><!-- End Stats Item -->
@@ -561,7 +561,7 @@
                   <i class="bi bi-people flex-shrink-0"></i>
                   <div>
                     <span data-purecounter-start="0" data-purecounter-end="{{ analytic.workers }}" data-purecounter-duration="1" class="purecounter"></span>
-                    <p><strong>Hard Workers</strong> <span>rerum asperiores dolor</span></p>
+                    <p><strong>Active child searchers</strong> <span> {{analytic.year}}</span></p>
                   </div>
                 </div>
               </div><!-- End Stats Item -->
@@ -698,14 +698,16 @@
         <p>our Team</p>
       </div><!-- End Section Title -->
 
+
+           
       <div class="container">
-
+        
         <div class="row gy-4">
-
+          {% for member in Teams %} 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="team-member">
               <div class="member-img">
-                <img src="{% static '/img/team/team-1.jpg' %}" class="img-fluid" alt="">
+                <img src="{{ member.profile_photo }}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -714,70 +716,17 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
+                <h4>{{ member.full_name }}</h4>
+                <span>{{ member.position }}</span>
               </div>
             </div>
           </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="{% static '/img/team/team-2.jpg' %}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="{% static '/img/team/team-3.jpg' %}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="{% static '/img/team/team-4.jpg' %}" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
+          
+          {% endfor %}
         </div>
 
       </div>
-
+      
     </section><!-- /Team Section -->
 
     <!-- Contact Section -->

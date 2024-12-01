@@ -6,7 +6,6 @@ from django.db import models
 
 
 
-"""teams model"""
 """Teams Model"""
 class Team(models.Model):
     """creating a model to store the details for the teams sections
@@ -33,13 +32,16 @@ class Team(models.Model):
 
 """analytics model"""
 class Analytic(models.Model):
+    customisableImage = models.ImageField(upload_to='media', default='images/happy-family.avif')
     reportedChildren = models.IntegerField()
     foundChildren = models.IntegerField()
     missingChildren = models.IntegerField()
     workers = models.IntegerField()
+    year = models.IntegerField(default='2024')
 
 
-    """defining a name for each entry"""
+    # defining the name for each entry
     def __str__(self):
-        return f"analytics {self.id}"
+        """Each entry will be labelled as shown below"""
+        return f"analytics ----> {self.id}"
 

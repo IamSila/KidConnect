@@ -45,3 +45,19 @@ class Analytic(models.Model):
         """Each entry will be labelled as shown below"""
         return f"analytics ----> {self.id}"
 
+"""report a case model"""
+class Report(models.Model):
+    firstName = models.CharField(max_length=256)
+    middleName = models.CharField(max_length=256)
+    lastName = models.CharField(max_length=256)
+    email = models.EmailField()
+    gender = models.CharField(max_length=3)
+    age = models.IntegerField()
+    height = models.IntegerField()
+    skinTone = models.CharField(max_length=50)
+    location = models.CharField(max_length=256)
+    dressing = models.TextField()
+    profilePhoto = models.ImageField(upload_to='media/Reported-Children')
+
+    def __str__(self):
+        return f"{self.firstName } {self.lastName}"

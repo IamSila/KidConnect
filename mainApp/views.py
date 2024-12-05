@@ -38,3 +38,6 @@ def report(request):
         newReport.save()
 
     return render(request, 'report.html')
+
+def base(request):
+    return render(request, 'base.html')

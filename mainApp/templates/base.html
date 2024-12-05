@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title%} KidConnect Navbar {% endblock %}</title>
+  <link rel="stylesheet" href="{% static '/css/base.css' %}">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo">
+        kidConnect<span>.</span>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#dropdown">Dropdown</a></li>
+          <li><a href="#contact" class="highlighted">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Report Button -->
+      <a href="{% url 'report' %}" class="report-button">Report a Missing child</a>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button type="submit" class="search-button">search</button>
+      </div>
+    </div>
+  </header>
+
+
+{% block body %}
+
+{% endblock %}
+</body>
+</html>

@@ -58,6 +58,7 @@ class Report(models.Model):
     location = models.CharField(max_length=256)
     dressing = models.TextField()
     profilePhoto = models.ImageField(upload_to='media/Reported-Children')
+    status = models.CharField(max_length=256, default='pending')
 
     def __str__(self):
         return f"{self.firstName } {self.lastName}"

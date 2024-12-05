@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Reported Children {% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static '/css/reportedChildren.css' %}">
+  <title>Responsive Report Card</title>
+ 
+</head>
+<body>
+    
+   <div class="report-card-container">
+    {% for reportedChild in reportedChildren %}
+    <div class="report-card">
+      <div class="report-card-image">
+        <img src="{{ reportedChild.profilePhoto }}" alt="{{ reportedChild.profilePhoto }}">
+      </div>
+      <div class="report-card-details">
+        <h2 class="report-name">Name: {{ reportedChild.firstName }} {{reportedChild.lastName}}</h2>
+        <p class="report-age"><strong>Age:</strong> {{ reportedChild.age }}</p>
+        <p class="report-height"><strong>Height:</strong> {{ reportedChild.height }}m</p>
+        <p class="report-status report-found">Status: {{reportedChild.status}} </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+    
+</body>
+</html>
+
+{% endblock body %}

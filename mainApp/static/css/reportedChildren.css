@@ -1,0 +1,84 @@
+    /* custom-styles.css */
+    /* body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        /*justify-content: center;*/
+        /*align-items: center;*/
+        /*height: 100vh;
+      } */
+      
+      .report-card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+      }
+      
+      .report-card {
+        background-color: #333;
+        color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .report-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      .report-card-image img {
+        width: 100%;
+        height: auto;
+        border-bottom: 2px solid #444;
+      }
+      
+      .report-card-details {
+        padding: 20px;
+      }
+      
+      .report-name {
+        margin: 10px 0;
+        font-size: 1.5rem;
+        color: #ffc107;
+      }
+      
+      .report-age, 
+      .report-height {
+        margin: 5px 0;
+        font-size: 1rem;
+        color: #ddd;
+      }
+      
+      .report-status {
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: inline-block;
+      }
+      
+      .report-found {
+        background-color: #28a745;
+        color: #fff;
+      }
+      
+        .report-missing {
+            background-color: #dc3545;
+            color: #fff;
+    }
+      
+      /* Responsive Design */
+    @media (max-width: 768px) {
+        .report-card {
+            width: 90%;
+        }
+    }
+      

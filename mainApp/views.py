@@ -29,15 +29,25 @@ def report(request):
         location = request.POST['location']
         dressing = request.POST['dressing']
         profilePhoto = request.POST['profilePhoto']
-
+        status = request.POST['status']
         #mapping each entry in a new report
         newReport = Report(firstName=firstName, middleName=middleName, lastName=lastName, email=email,\
                            gender=gender, age=age, height=height, skinTone=skinTone, location=location, dressing=dressing,\
-                            profilePhoto=profilePhoto)
+                            profilePhoto=profilePhoto, status = status)
         
         newReport.save()
 
     return render(request, 'report.html')
 
 def base(request):
+    """rendering the base file for testing purposes"""
     return render(request, 'base.html')
+
+#reported
+def reportedChildren(request):
+    """rendering all reported children"""
+    context = {}
+    reportedChildren = Report.objects.all()
+    context['reportedChildren'] =  reportedChildren
+    return render(request, 'reportedChildren.html', context)
+

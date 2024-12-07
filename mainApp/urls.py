@@ -7,4 +7,6 @@ urlpatterns = [
     path('base/', views.base, name="base"),
     path('reported/', views.reportedChildren, name="reportedChildren"),
     path('search/', views.search, name='search'),
+    path('customAdmin/', views.customAdmin, name="customAdmin"),
+    path('updateDetails/<str:id>', views.updateDetails, name="update")
 ]

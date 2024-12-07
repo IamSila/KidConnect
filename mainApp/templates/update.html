@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="{% static '/css/report.css' %}" rel="stylesheet">
+    <link href="{% static '/css/update.css' %}" rel="stylesheet">
 </head>
 
 
@@ -20,53 +20,56 @@
         <div class="form_">
             <form action="" method="post">
                 {% csrf_token %}
+                {% if updateChild %}
+                    
+                
                 <label for="email">Reporter email</label>
-                <input type="email" name="email" id="">
+                <input type="email" name="email" id="" value="{{ updateChild.email }}">
 
                 <label for="firstName">First Name</label>
-                <input type="text" name="firstName" id="">
+                <input type="text" name="firstName" id="" value="{{ updateChild.firstName }}">
 
                 <label for="middleName">Middle Name</label>
-                <input type="text" name="middleName" id="">
+                <input type="text" name="middleName" id="" value="{{ updateChild.middleName }}">
 
                 <label for="lastName">Last Name</label>
-                <input type="text" name="lastName" id="">
+                <input type="text" name="lastName" id="" value="{{ updateChild.lastName }}">
 
                 <label for="gender">Gender</label>
-                <select name="gender" id="">
+                <select name="gender" id="" >
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </select>
 
                 <label for="age">Age</label>
-                <input type="number" name="age" id="">
+                <input type="number" name="age" id="" value="{{ updateChild.age }}">
 
                 <label for="height">Height in metres</label>
-                <input type="number" name="height" id="">
+                <input type="number" name="height" id="" value="{{ updateChild.height }}">
 
                 <label for="skin-tone">Skin tone</label>
-                <select name="skinTone" id="">
+                <select name="skinTone" id="" >
                     <option value="dark">dark</option>
                     <option value="Chocolate">Chocolate</option>
                     <option value="light">Light</option>
                 </select>
 
                 <label for="location">Last seen location</label>
-                <input type="text" name="location" id="">
+                <input type="text" name="location" id="" value="{{ updateChild.location }}">
 
                 <label for="dressing">Lastly dressed</label>
-                <input type="text" name="dressing" id="">
+                <input type="text" name="dressing" id="" value="{{ updateChild.dressing }}">
 
                 <label for="profile_photo">Profile_Photo</label>
-                <input type="file" name="profilePhoto" id="">
+                <input type="file" name="profilePhoto" id="" value="{{ updateChild.profilePhoto }}">
 
                 <label for="status">Status</label>
                 <select name="status" id="">
                     <option value="Found">found</option>
                     <option value="pending">pending</option>
                 </select>
-                
-                <button type="submit">Report</button>
+                {% endif %}
+                <button type="submit">Update Details</button>
             </form>
         </div>
     </div>

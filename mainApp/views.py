@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from . models import Analytic, Team, Report
 
 
@@ -14,7 +14,7 @@ def index(request):
     return render(request, 'index.html', context)
 
 
-#report a missing child
+#report a missing updatedChild
 def report(request):
     """define the report.html backend"""
     if request.method == 'POST':
@@ -45,7 +45,7 @@ def base(request):
 
 #reported
 def reportedChildren(request):
-    """rendering all reported children"""
+    """rendering all reported updatedChildren"""
     context = {}
     reportedChildren = Report.objects.all()
     context['reportedChildren'] =  reportedChildren
@@ -58,3 +58,29 @@ def search(request):
         search = request.GET['search']
         posts = Report.objects.filter(firstName = search)
         return render(request, 'search.html', {'posts':posts})
+
+#customAdmin
+def customAdmin(request):
+    reportedChildren = Report.objects.all()
+    context = {'reportedChildren' : reportedChildren }
+    return render(request, 'customAdmin.html', context)
+
+#admin update button
+def updateDetails(request, id): 
+    updateChild = get_object_or_404(Report, id=id)
+    if request.method == 'POST':
+        updateChild.firstName = request.POST.get('firstName')
+        updateChild.middleName = request.POST.get('middleName')
+        updateChild.lastName = request.POST.get('lastName')
+        updateChild.email = request.POST.get('email')
+        updateChild.gender = request.POST.get('gender')
+        updateChild.age = request.POST.get('age')
+        updateChild.height = request.POST.get('height')
+        updateChild.skinTone = request.POST.get('skinTone')
+        updateChild.location = request.POST.get('location')
+        updateChild.dressing = request.POST.get('dressing')
+        updateChild.profilePhoto = request.POST.get('profilePhoto')
+        updateChild.status = request.POST.get('status')
+        updateChild.save()
+    context = { 'updateChild':updateChild }
+    return render(request, 'update.html', context)

@@ -52,7 +52,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Home<br></a></li>
+          <li><a href="{% url 'index' %}" class="active">Home<br></a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
@@ -78,7 +78,7 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
+      <a class="btn-getstarted" href="{% url 'reportedChildren' %}">Reported Children</a>
       <a class="btn-getstarted" href="{% url 'report' %}">Report a Missing child</a>
 
     </div>
@@ -104,31 +104,31 @@
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
               <i class="bi bi-binoculars"></i>
-              <h3><a href="">Lorem Ipsum</a></h3>
+              <h3><a href="{% url 'reportedChildren' %}">See all reported </a></h3>
             </div>
           </div>
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="400">
             <div class="icon-box">
               <i class="bi bi-bullseye"></i>
-              <h3><a href="">Dolor Sitema</a></h3>
+              <h3><a href="">filter for found</a></h3>
             </div>
           </div>
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box">
               <i class="bi bi-fullscreen-exit"></i>
-              <h3><a href="">Sedare Perspiciatis</a></h3>
+              <h3><a href="">search for a specific child</a></h3>
             </div>
           </div>
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="600">
             <div class="icon-box">
               <i class="bi bi-card-list"></i>
-              <h3><a href="">Magni Dolores</a></h3>
+              <h3><a href="">Report a lost child</a></h3>
             </div>
           </div>
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="700">
             <div class="icon-box">
               <i class="bi bi-gem"></i>
-              <h3><a href="">Nemos Enimade</a></h3>
+              <h3><a href="">About kidConnect</a></h3>
             </div>
           </div>
         </div>

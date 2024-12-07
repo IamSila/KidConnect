@@ -35,10 +35,14 @@
         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
       }
       
+    
       .report-card-image img {
         width: 100%;
+        /* width: 200px; */
         height: auto;
-        border-bottom: 2px solid #444;
+        /* height: 200px; */
+        border: 2px solid #444;
+        border-radius: 50%;
       }
       
       .report-card-details {
@@ -70,9 +74,9 @@
         color: #fff;
       }
       
-        .report-missing {
-            background-color: #dc3545;
-            color: #fff;
+      .report-missing {
+        background-color: #dc3545;
+        color: #fff;
     }
       
       /* Responsive Design */

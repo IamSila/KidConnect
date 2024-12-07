@@ -82,7 +82,7 @@ body, ul, li, a, button, input {
   }
   
   /* Search Bar with Button */
-  .search-bar {
+  .search-bar .form {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -103,7 +103,7 @@ body, ul, li, a, button, input {
     color: #aaa;
   }
   
-  .search-bar button {
+  .search-bar  button {
     background-color: #fcb700; /* Yellow */
     color: #fff;
     border: none;

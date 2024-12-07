@@ -12,21 +12,26 @@
   <title>Responsive Report Card</title>
  
 </head>
-<body>
+<body style="background-color: aqua;">
     
    <div class="report-card-container">
     {% for reportedChild in reportedChildren %}
     <div class="report-card">
       <div class="report-card-image">
-        <img src="{{ reportedChild.profilePhoto }}" alt="{{ reportedChild.profilePhoto }}">
+        <img src="{{ reportedChild.profilePhoto.url }}" alt="{{ reportedChild.profilePhoto }}" height="200px" width="200px">
       </div>
       <div class="report-card-details">
         <h2 class="report-name">Name: {{ reportedChild.firstName }} {{reportedChild.lastName}}</h2>
         <p class="report-age"><strong>Age:</strong> {{ reportedChild.age }}</p>
         <p class="report-height"><strong>Height:</strong> {{ reportedChild.height }}m</p>
-        <p class="report-status report-found">Status: {{reportedChild.status}} </p>
+        {% if reportedChild.status == "Found" %}
+          <p class="report-status report-found">Status: {{reportedChild.status}} </p>
+        {% else %}
+        <p class="report-status report-missing">Status: {{reportedChild.status}} </p>
+        {%endif%}
       </div>
     </div>
+    
     {% endfor %}
   </div>
     

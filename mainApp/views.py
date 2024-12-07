@@ -51,3 +51,10 @@ def reportedChildren(request):
     context['reportedChildren'] =  reportedChildren
     return render(request, 'reportedChildren.html', context)
 
+#search
+def search(request):
+    """logic for the search bar and button"""
+    if request.method == 'GET':
+        search = request.GET['search']
+        posts = Report.objects.filter(firstName = search)
+        return render(request, 'search.html', {'posts':posts})

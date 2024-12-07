@@ -51,13 +51,13 @@ class Report(models.Model):
     middleName = models.CharField(max_length=256)
     lastName = models.CharField(max_length=256)
     email = models.EmailField()
-    gender = models.CharField(max_length=3)
+    gender = models.CharField(max_length=20)
     age = models.IntegerField()
     height = models.IntegerField()
     skinTone = models.CharField(max_length=50)
     location = models.CharField(max_length=256)
     dressing = models.TextField()
-    profilePhoto = models.ImageField(upload_to='media/Reported-Children')
+    profilePhoto = models.ImageField(upload_to='media/ReportedChildren')
     status = models.CharField(max_length=256, default='pending')
 
     def __str__(self):

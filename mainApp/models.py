@@ -57,7 +57,7 @@ class Report(models.Model):
     skinTone = models.CharField(max_length=50)
     location = models.CharField(max_length=256)
     dressing = models.TextField()
-    profilePhoto = models.ImageField(upload_to='media/ReportedChildren')
+    profilePhoto = models.ImageField(upload_to='media')
     status = models.CharField(max_length=256, default='pending')
 
     def __str__(self):

@@ -1,6 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from . models import Analytic, Team, Report
+from django.http import JsonResponse
+import os
 
+#ensure the API key is loaded from the environment
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
+#GEMINI_API_URL =   
 
 # Create your views here.
 def index(request):
@@ -68,6 +73,7 @@ def customAdmin(request):
 #admin update button
 def updateDetails(request, id): 
     updateChild = get_object_or_404(Report, id=id)
+    reportedChildImage = Report.objects.get(profilePhoto=id)
     if request.method == 'POST':
         updateChild.firstName = request.POST.get('firstName')
         updateChild.middleName = request.POST.get('middleName')
@@ -82,5 +88,13 @@ def updateDetails(request, id):
         updateChild.profilePhoto = request.POST.get('profilePhoto')
         updateChild.status = request.POST.get('status')
         updateChild.save()
-    context = { 'updateChild':updateChild }
+    context = { 'updateChild':updateChild,'reportedChildImage': reportedChildImage }
     return render(request, 'update.html', context)
+
+
+#generateDetails
+def generateDetails(request):
+    """logic and back end for the generate Details button in reported page"""
+    context = {}
+
+    return render(request, 'generateDetails.html', context)

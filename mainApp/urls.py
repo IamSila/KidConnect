@@ -8,5 +8,6 @@ urlpatterns = [
     path('reported/', views.reportedChildren, name="reportedChildren"),
     path('search/', views.search, name='search'),
     path('customAdmin/', views.customAdmin, name="customAdmin"),
-    path('updateDetails/<str:id>', views.updateDetails, name="update")
+    path('updateDetails/<str:id>', views.updateDetails, name="update"),
+    path('generateDetails/', views.generateDetails, name="generateDetails")
 ]

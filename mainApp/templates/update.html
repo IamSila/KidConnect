@@ -3,19 +3,12 @@
 {% block title %} Report a missing child {% endblock %}
 
 {% block body %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="{% static '/css/update.css' %}" rel="stylesheet">
-</head>
-
 
     <div class="container-form">
         <div class="form-image">
-            <img src="{% static '/img/reports/parent-wife-child.png' %}" alt="">
+            
+            <img src="{{ reportedChild }}" alt="child image here">
+            
         </div>
         <div class="form_">
             <form action="" method="post">

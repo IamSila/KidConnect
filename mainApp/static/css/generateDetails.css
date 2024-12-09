@@ -1,0 +1,29 @@
+.generated-content > p{
+    width: 50%;
+    border: 1px solid #e0a800;
+    color: aquamarine;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+.generated-content:hover{
+    transform: scale(1.15);
+}
+.details-position {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
+}
+
+body {
+    background-color: black;
+}

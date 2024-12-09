@@ -5,8 +5,6 @@
 
 {% block body %}
 
-  
-
   <div class="search-position">
     <form action="{% url 'search' %}" class="search">
       <input type="text" placeholder="search for a child" name="search">
@@ -17,7 +15,7 @@
     {% for reportedChild in reportedChildren %}
     <div class="report-card">
       <div class="report-card-image">
-        <img src="{{ reportedChild.profilePhoto.url}}" alt="{{ reportedChild.profilePhoto }}" height="200px" width="200px">
+        <img src="{{ reportedChild.profilePhoto.url }}" alt="" height="200px" width="200px">
       </div>
       <div class="report-card-details">
         <h2 class="report-name">Name: {{ reportedChild.firstName }} {{reportedChild.lastName}}</h2>
@@ -28,6 +26,7 @@
         {% else %}
         <p class="report-status report-missing">Status: {{reportedChild.status}} </p>
         {%endif%}
+        <a href="{% url 'generateDetails' %}"><p>generate details</p></a>
       </div>
     </div>
     

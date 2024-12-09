@@ -11,6 +11,9 @@
   <link rel="stylesheet" href="{% static '/css/base.css' %}">
   <!-- link for reportedChildren.html  -->
   <link rel="stylesheet" href="{% static '/css/reportedChildren.css' %}">
+  <!-- css for generateDetails.html -->
+   <link rel="stylesheet" href="{% static '/css/generateDetails.css' %}">
+
 </head>
 <body>
   <header class="navbar">
@@ -35,7 +38,8 @@
       <a href="{% url 'reportedChildren' %}" class="report-button">Reported Children</a>
       <!-- Report Button -->
       <a href="{% url 'report' %}" class="report-button">Report a Missing child</a>
-
+      <!-- update.html css -->
+      <link href="{% static '/css/update.css' %}" rel="stylesheet">
       <!-- Search Bar -->
       <!-- <form class="search-bar" method="get" action="{% url 'search' %}">
         

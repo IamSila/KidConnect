@@ -21,7 +21,7 @@
 
       .search-position > form {
         margin: 20px 0;
-        border: 1px solid red;
+        /* border: 1px solid red; */
       }
       
       .search > input {
@@ -36,10 +36,11 @@
         
         border-radius: 10px;
         font-weight: bold;
+        background-color: #fcb700,
       }
 
       .search > button:hover {
-        background-color: #fcb700;
+        background-color: green;
       }
 
       .report-card-container {

@@ -1,19 +1,35 @@
 {% extends 'base.html' %}
 
-{% block title %} Generate child details {% endblock title %}
 
 
 {% block body %}
-
-<div class="detials-position">
-    <div class="generated-content">
-        <p><i>Emily Johnson, an 8-year-old girl, was last seen on December 2, 2024, around 4:30 PM near the carousel area at Central Park, New York City. She was wearing a pink hoodie, blue jeans, white sneakers, and carrying a small yellow backpack with cartoon characters. Emily, who has shoulder-length blonde hair and blue eyes, was reported missing after briefly separating from her older sibling. If you have any information on Emily's whereabouts, please contact 1-800-MISSING or email emilyguardian@example.com immediately. Your assistance is greatly appreciated.</i></p>
-
-    </div>
-
-</div>
+   
+    <div class="details-position">
+        <div>
+            <div class="generated-content">
+                <p><i>Emily Johnson, an 8-year-old girl, was last seen on December 2, 2024, around 
+                    4:30 PM near the carousel area at Central Park, New York City. She was wearing a pink hoodie,
+                    blue jeans, white sneakers, and carrying a small yellow backpack with cartoon characters. 
+                    Emily, who has shoulder-length blonde hair and blue eyes, was reported missing after briefly
+                    separating from her older sibling. If you have any information on Emily's whereabouts, 
+                    please contact 1-800-MISSING or email emilyguardian@example.com immediately. 
+                    Your assistance is greatly appreciated.</i></p>
     
+            </div>
+    
+            <div class="generated-content-nav">
+                <button><a href="{% url 'reportedChildren' %}">back</a></button>
+                <button><a href="mailto:{{email}}">contact parent</a></button>
+            </div>
+        </div>
+    </div>
 {% endblock body %}
+
+    
+    
+
+
+    
 
 
 

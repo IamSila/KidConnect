@@ -67,6 +67,7 @@
         {% else  %}
         <div class="search-results">
             <button class="search-text">you searched for <i>{{posts}}</i> <strong id="not-found">... Results not found</strong></button>
+            <button><a href="{% url 'reportedChildren' %}">back</a></button>
         </div>
     {% endif%}
 

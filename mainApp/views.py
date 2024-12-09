@@ -56,7 +56,7 @@ def reportedChildren(request):
     context['reportedChildren'] =  reportedChildren
     return render(request, 'reportedChildren.html', context)
 
-#search
+# reportedChildren search
 def search(request):
     """logic for the search bar and button"""
     if request.method == 'GET':
@@ -73,7 +73,7 @@ def customAdmin(request):
 #admin update button
 def updateDetails(request, id): 
     updateChild = get_object_or_404(Report, id=id)
-    reportedChildImage = Report.objects.get(profilePhoto=id)
+    reportedChildImage = updateChild.profilePhoto.url
     if request.method == 'POST':
         updateChild.firstName = request.POST.get('firstName')
         updateChild.middleName = request.POST.get('middleName')
@@ -85,16 +85,31 @@ def updateDetails(request, id):
         updateChild.skinTone = request.POST.get('skinTone')
         updateChild.location = request.POST.get('location')
         updateChild.dressing = request.POST.get('dressing')
-        updateChild.profilePhoto = request.POST.get('profilePhoto')
+        new_profile_photo = request.FILES.get('profilePhoto')  # Use FILES for image uploads
+
+        if new_profile_photo:
+            # If a new image is uploaded, update the field
+            updateChild.profilePhoto = new_profile_photo
+        else:
+            # If no new image is provided, keep the existing image
+            # This line isn't necessary unless you overwrite the field elsewhere
+            pass
         updateChild.status = request.POST.get('status')
         updateChild.save()
     context = { 'updateChild':updateChild,'reportedChildImage': reportedChildImage }
     return render(request, 'update.html', context)
 
+# customAdmin/delete
+def delete(request, id):
+    deleteChild = Report.objects.get(id=id)
+    deleteChild.delete()
+    return redirect('customAdmin.html/')
 
 #generateDetails
-def generateDetails(request):
+def generateDetails(request, id):
     """logic and back end for the generate Details button in reported page"""
-    context = {}
+    reportedChild = Report.objects.get(id=id)
+    email = reportedChild.email
+    context = {'reportedChild': reportedChild, 'email':email}
 
     return render(request, 'generateDetails.html', context)

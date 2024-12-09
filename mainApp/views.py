@@ -103,7 +103,7 @@ def updateDetails(request, id):
 def delete(request, id):
     deleteChild = Report.objects.get(id=id)
     deleteChild.delete()
-    return redirect('customAdmin.html/')
+    return redirect('customAdmin')
 
 #generateDetails
 def generateDetails(request, id):

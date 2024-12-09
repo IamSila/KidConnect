@@ -135,7 +135,7 @@
                 <td>{{ reportedChild.location }}</td>
                 <td class="action-buttons">
                     <a href="{% url 'update' reportedChild.id %}"><button class="edit-btn">update</button></a>
-                    <a href="{% url 'delete' %}"><button class="delete-btn">Delete</button></a>
+                    <a href="{% url 'delete' reportedChild.id %}"><button class="delete-btn">Delete</button></a>
                     <button class="contact-btn">Contact</button>
                 </td>
                 
